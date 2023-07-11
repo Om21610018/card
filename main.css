@@ -1,0 +1,350 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: black;
+}
+
+.topwrapper {
+  height: 100vh;
+  width: 100%vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: black;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 50px auto;
+}
+.circle1 {
+  position: absolute;
+  right: 60%;
+  top: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, orange, orangered);
+  filter: blur(3px);
+  animation-duration: 15s;
+  animation-name: circu1;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.circle2 {
+  position: absolute;
+  right: 30%;
+  top: 500px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, red, orangered);
+  filter: blur(3px);
+
+  animation-duration: 10s;
+  animation-name: circu2;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes circu2 {
+  0% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(40px);
+    transform: translateY(20px);
+  }
+  70% {
+    transform: translateX(15px);
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+@keyframes circu1 {
+  0% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(50px);
+    /* transform: translateY(30px); */
+  }
+  70% {
+    transform: translateX(15px);
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+.card-wrapper {
+  user-select: none;
+  display: flex;
+  width: 400px;
+  border: 1px solid rgba(255, 255, 255, 0.361);
+  margin: 0 auto;
+  height: 500px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.112);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+}
+#images {
+  border-radius: 50%;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.516);
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.3);
+
+  color: white;
+  border-radius: 20px;
+  width: 500px;
+  height: 200px;
+  translate: -50% -50%;
+  display: flex;
+  transition: 0.3s ease-in-out;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: scale(1);
+  position: fixed;
+  border: 1px solid white;
+  top: 400px;
+  left: 50%;
+  z-index: 100;
+  scale: 0;
+  backdrop-filter: blur(10px);
+}
+.modal-header {
+  padding: 0px auto;
+  padding-bottom: 8px;
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.301);
+  align-items: center;
+  /* margin-top:-20px; */
+}
+.modal-header h1 {
+  font-weight: lighter;
+}
+.modal-header i {
+  font-size: 20px;
+  color: white;
+}
+.modal-header i:hover {
+  color: orangered;
+}
+
+.sub-modal {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  font-size: 20px;
+}
+
+.icon-container {
+  display: flex;
+  width: 90%;
+  justify-content: space-around;
+}
+.icon-container a {
+  border: 1px solid white;
+  padding: 20px;
+  color: orange;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+
+#facebook:hover {
+  color: white;
+  background-color: #1778f2;
+  transition: all 0.5s ease-in;
+}
+#twitter:hover {
+  color: white;
+  background-color: #1da1f2;
+  transition: all 0.5s ease-in;
+}
+#instagram:hover {
+  color: white;
+  background-color: #feda75;
+  transition: all 0.5s ease-in;
+}
+#telegram:hover {
+  color: white;
+  background-color: #229ed9;
+  transition: all 0.5s ease-in;
+}
+#linkedin:hover {
+  color: white;
+  background-color: #0e76a8;
+  transition: all 0.5s ease-in;
+}
+.overlay {
+  width: 1400px;
+  height: 1400px;
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+  pointer-events: none;
+  backdrop-filter: blur(10px);
+}
+
+.active {
+  scale: 1;
+}
+
+.overlayactive {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.user-name {
+  font-size: 22px;
+  font-weight: 200;
+  color: wheat;
+}
+.designation {
+  font-size: 15px;
+  margin-top: -5px;
+  color: aliceblue;
+}
+
+.bottom-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.btn-card {
+  padding: 15px 20px;
+  color: white;
+  border-radius: 20px;
+  border: 2px solid teal;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.596);
+  backdrop-filter: blur(30px);
+}
+
+.btn-share {
+  display: flex;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.596);
+  backdrop-filter: blur(30px);
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+.btn-card:hover {
+  transform: scale(1.05);
+  transition: all 0.1s ease-in;
+  box-shadow: 1px 1px 5px black;
+}
+.follow {
+  position: relative;
+  width: 250px;
+  height: 150px;
+  position: absolute;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.452);
+  top: 300px;
+  border: 1px solid rgba(255, 255, 255, 0.543);
+  right: 35%;
+  scale: 0;
+  transition: all 0.3s ease-in-out;
+  border-radius: 20px;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.follow i {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.follow i:hover {
+  position: absolute;
+  color: orangered;
+  transition: all 0.1s ease;
+  top: 20px;
+  right: 20px;
+}
+
+@media (max-width: 600px) { 
+  /* work for width 600px and lower than 600px */
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-wrapper {
+    scale: 0.75;
+  }
+  .circle1 {
+    scale: 0.8;
+  }
+  .circle2 {
+    scale: 0.7;
+    top: 450px;
+    right: 10%;
+  }
+  .modal {
+    
+    width: 65vw;
+  }
+  .modal-header {
+    font-size: 12px;
+  }
+  .sub-modal h3 {
+    font-size: 15px;
+  }
+  .icon-container a{
+    width: 2px;
+    height: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+  }
+  .icon-container{
+    padding: 2px;
+    display: flex;
+    gap: 8px;
+  }
+  .follow{
+    width: 45vw;
+    height: 20vh;
+    right:20%;
+  }
+}
